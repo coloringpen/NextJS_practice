@@ -11,6 +11,13 @@ export default function Home() {
         <h1>Hello {counter}</h1>
         <button onClick={() => setCounter((prev) => (prev += 1))}>+</button>
       </div>
+      <style jsx>
+        {`
+          a {
+            color: white;
+          }
+        `}
+      </style>
     </>
   );
 }

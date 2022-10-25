@@ -29,9 +29,22 @@ export default function NavBar() {
           About
         </a> */}
 
-        <a>Home</a>
-        <a>About</a>
+        <a className={router.pathname === '/' ? 'active' : ''}>Home</a>
       </Link>
+      <Link href="/about">
+        <a className={router.pathname === '/about' ? 'active' : ''}>About</a>
+      </Link>
+      <style jsx>{`
+        nav {
+          background-color: tomato;
+        }
+        a {
+          text-decoration: none;
+        }
+        .active {
+          color: yellow;
+        }
+      `}</style>
     </nav>
     //   There is a specific component we have to use in NextJS to navigate
   );
