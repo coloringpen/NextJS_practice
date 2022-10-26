@@ -1,15 +1,14 @@
-/* function Potato() {
-  return 'about us';
-} 
-
-Error: The default export is not a React Component in page: "/about"
-*/
-
-import NavBar from '../component/NavBar';
+// import Head from 'next/head';
+import Seo from '../component/Seo';
 
 export default function Potato() {
   return (
     <>
+      <Seo title="About" />
+
+      {/* <Head>
+        <title>Home | Next Movies</title>
+      </Head> */}
       <div>about us</div>
     </>
   );
