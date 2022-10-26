@@ -10,7 +10,6 @@ import NavBar from '../component/NavBar';
 export default function Potato() {
   return (
     <>
-      <NavBar></NavBar>
       <div>about us</div>
     </>
   );
