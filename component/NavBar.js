@@ -1,51 +1,48 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import styles from './NavBar.module.css';
 
 export default function NavBar() {
   const router = useRouter();
-  //   console.log(router);
   return (
-    // <nav className={styles.nav}>
     <nav>
-      {/* <a href="/">Home</a>  We shouldn't use a tag to navigate the homepage*/}
+      <img src="/vercel.svg" />{' '}
+      {/** .. ./이런거 필요없이 그냥 슬래시 치고 바로 파일 항목 쓰면 됨 */}
       <Link href="/">
-        {/* <a style={{ color: router.pathname === '/' ? 'red' : 'blue' }}>Home</a> */}
-        {/* <a
-          className={`${styles.link} ${
-            router.pathname === '/' ? styles.active : ''
-          }`}
-        >
-          Home
-        </a>
-      </Link>
-      <Link href="about">
-        <a
-          className={[
-            styles.link,
-            router.pathname === '/about' ? styles.active : '',
-          ].join(' ')}
-        >
-          About
-        </a> */}
-
         <a className={router.pathname === '/' ? 'active' : ''}>Home</a>
       </Link>
       <Link href="/about">
         <a className={router.pathname === '/about' ? 'active' : ''}>About</a>
       </Link>
       <style jsx>{`
-        nav {
-          background-color: tomato;
-        }
         a {
           text-decoration: none;
         }
+        nav {
+          display: flex;
+          gap: 10px;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 20px;
+          padding-bottom: 10px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+            rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        }
+        img {
+          max-width: 100px;
+          margin-bottom: 5px;
+        }
+        nav a {
+          font-weight: 600;
+          font-size: 18px;
+        }
         .active {
-          color: yellow;
+          color: tomato;
+        }
+        nav div {
+          display: flex;
+          gap: 10px;
         }
       `}</style>
     </nav>
-    //   There is a specific component we have to use in NextJS to navigate
   );
 }
